@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tanya Pricelist</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6dd5fa, #2980b9);
+      text-align: center;
+      color: white;
+      padding: 30px;
+    }
+
+    .card {
+      background: white;
+      color: black;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 350px;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 1s;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1ebe5d;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h2>📸 Tanya Pricelist</h2>
+    <p>Isi dulu ya biar aku kirim detailnya 👇</p>
+
+    <input type="text" id="nama" placeholder="Nama kamu">
+
+    <select id="layanan">
+      <option value="">Pilih Layanan</option>
+      <option value="Foto Wisuda">Foto Wisuda</option>
+      <option value="Foto Prewedding">Prewedding</option>
+      <option value="Video Shooting">Video Shooting</option>
+    </select>
+
+    <button onclick="kirimWA()">Kirim ke WhatsApp</button>
+  </div>
+
+<script>
+function kirimWA() {
+  var nama = document.getElementById("nama").value;
+  var layanan = document.getElementById("layanan").value;
+
+  if(nama === "" || layanan === "") {
+    alert("Isi dulu semua ya!");
+    return;
+  }
+
+  var nomor = "6285876162867"; // GANTI NOMOR WA KAMU
+
+  var pesan = `Halo kak 👋
+Nama: ${nama}
+Saya mau tanya pricelist untuk:
+👉 ${layanan}
+
+Boleh minta info detailnya? 😊`;
+
+  var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
