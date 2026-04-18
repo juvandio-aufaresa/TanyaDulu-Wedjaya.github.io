@@ -2,61 +2,90 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+
+<!-- WAJIB untuk mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tanya Pricelist</title>
 
 <style>
 body {
-  font-family: Arial;
+  margin: 0;
+  font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  text-align: center;
+}
+
+/* FULL SCREEN MOBILE */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px;
 }
 
 .card {
   background: white;
-  color: black;
+  border-radius: 20px;
   padding: 25px;
-  border-radius: 15px;
-  max-width: 350px;
-  margin: auto;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.5s;
 }
 
-.step { display: none; }
-.active { display: block; }
-
-button {
-  margin-top: 15px;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  background: #25D366;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+h3 {
+  margin-bottom: 10px;
 }
 
-button:hover {
-  background: #1ebe5d;
+.step {
+  display: none;
 }
 
+.active {
+  display: block;
+}
+
+/* INPUT MOBILE FRIENDLY */
 input, select {
   width: 100%;
-  padding: 10px;
+  padding: 14px;
   margin-top: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
 }
 
+/* BUTTON BESAR */
+button {
+  margin-top: 20px;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #25D366;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* PROGRESS */
 .progress {
+  color: #555;
+  font-size: 14px;
   margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 </style>
 </head>
 
 <body>
+
+<div class="container">
 
 <div class="card">
 
